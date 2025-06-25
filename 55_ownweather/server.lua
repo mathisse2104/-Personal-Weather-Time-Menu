@@ -27,11 +27,11 @@ AddEventHandler('weerlog:log', function(title, description)
             ["description"] = fullDescription,
             ["color"] = 16753920, -- Oranje
             ["thumbnail"] = {
-                ["url"] = "https://mathisse.nl/logo.png"
+                ["url"] = "YOUR_OWN_THUMBNAIL"
             },
             ["footer"] = {
-                ["text"] = "Eigenweer script by 55 Development",
-                ["icon_url"] = "https://mathisse.nl/logo.png"
+                ["text"] = "Personal weather / time by 55 Development",
+                ["icon_url"] = "YOUR_OWN_FOOTER"
             },
             ["timestamp"] = os.date('!%Y-%m-%dT%H:%M:%SZ')
         }
@@ -45,7 +45,7 @@ AddEventHandler('weerlog:log', function(title, description)
 
     PerformHttpRequest(webhookURL, function(err, text, headers)
         if err ~= 204 then
-            print('[WeerLog] Fout bij verzenden: ' .. tostring(text))
+            print('[WeerLog] Error sending: ' .. tostring(text))
         end
     end, 'POST', json.encode(payload), { ['Content-Type'] = 'application/json' })
 end)

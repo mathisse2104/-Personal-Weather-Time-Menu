@@ -38,4 +38,5 @@ Automatically sends a log to your webhook with:
 > Edit the webhook in `server.lua`
 
 local webhookURL =  'YOUR_WEBHOOK_HERE'
-avatar_url =  "YOUR_OWN_THUMBNAIL"
+avatar_url =  "YOUR_OWN_AVATAR"
+["url"] = "YOUR_OWN_THUMBNAIL"

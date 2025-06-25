@@ -1,7 +1,7 @@
 local webhookURL = 'YOUR_WEBHOOK_HERE'
 
-RegisterServerEvent('weerlog:log')
-AddEventHandler('weerlog:log', function(title, description)
+RegisterServerEvent('weatherlog:log')
+AddEventHandler('weatherlog:log', function(title, description)
     local src = source
     local identifiers = GetPlayerIdentifiers(src)
     local steam, fivem = "Unknown", "Unknown"
@@ -45,7 +45,7 @@ AddEventHandler('weerlog:log', function(title, description)
 
     PerformHttpRequest(webhookURL, function(err, text, headers)
         if err ~= 204 then
-            print('[WeerLog] Error sending: ' .. tostring(text))
+            print('[WeatherLog] Error sending: ' .. tostring(text))
         end
     end, 'POST', json.encode(payload), { ['Content-Type'] = 'application/json' })
 end)
